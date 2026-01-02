@@ -26,8 +26,24 @@ section h2 { font-size:2.1rem; margin-bottom:20px; color:#00e0ff; text-transform
 .old { text-decoration:line-through; color:#888; font-size:1.2rem; }
 .new { font-size:2.6rem; font-weight:bold; color:#00e0ff; }
 
-.video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:30px; }
-.video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+/* 🔽 AJUSTE ÚNICO DO VÍDEO */
+.video {
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:12px;
+  margin:30px auto;
+  max-width:720px;
+}
+.video iframe {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
 
 .simulator { background:#111118; border:2px solid #00e0ff; padding:40px; border-radius:14px; text-align:center; }
 .simulator input { padding:12px; font-size:1.1rem; width:220px; text-align:center; border-radius:6px; border:none; }
@@ -141,44 +157,4 @@ function simular() {
   const lucroAnual = 0.7087;
   const taxaMensal = Math.pow(1 + lucroAnual, 1/12) - 1;
 
-  let capital = capitalInicial;
-  let lucroLiquidoTotal = 0;
-  let valores = [];
-
-  for (let i=1;i<=12;i++) {
-    const lucroBruto = capital * taxaMensal;
-    const taxa = lucroBruto * 0.30;
-    const liquido = lucroBruto - taxa;
-    capital += liquido;
-    lucroLiquidoTotal += liquido;
-    valores.push(capital);
-  }
-
-  const percentualMensal = ((lucroLiquidoTotal / capitalInicial) / 12) * 100;
-
-  document.getElementById("resultado").innerHTML = `
-    LUCRO LÍQUIDO TOTAL: R$ ${lucroLiquidoTotal.toFixed(2)}<br>
-    CAPITAL FINAL ESTIMADO: R$ ${capital.toFixed(2)}<br>
-    <strong>≈ ${percentualMensal.toFixed(2)}% AO MÊS (LÍQUIDO)</strong>
-  `;
-
-  const ctx = document.getElementById("grafico").getContext("2d");
-  ctx.clearRect(0,0,900,420);
-
-  const max = Math.max(...valores);
-  valores.forEach((v,i)=>{
-    const h = (v/max)*280;
-    const x = 60 + i*65;
-    const y = 360-h;
-    ctx.fillStyle = "#00e0ff";
-    ctx.fillRect(x,y,40,h);
-    ctx.fillStyle="#fff";
-    ctx.font="11px Arial";
-    ctx.fillText(`M${i+1}`,x+5,380);
-    ctx.fillText(`R$ ${v.toFixed(0)}`,x-5,y-8);
-  });
-}
-</script>
-
-</body>
-</html>
+  let capit
