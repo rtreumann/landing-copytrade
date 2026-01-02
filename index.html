@@ -9,7 +9,11 @@
     header { background: linear-gradient(135deg,#1f1f2e,#111118); padding:90px 20px; text-align:center; }
     header h1 { font-size:2.8rem; margin-bottom:20px; color:#00e0ff; text-transform:uppercase; }
     header p { font-size:1.25rem; max-width:900px; margin:0 auto 15px; }
+
     .cta { background:#00e0ff; color:#000; padding:18px 38px; border-radius:6px; font-size:1.15rem; font-weight:bold; text-decoration:none; display:inline-block; margin:10px; }
+
+    .cta-green { background:#28a745; color:#fff; }
+
     .badge { display:inline-block; background:#ff3b3b; color:#fff; padding:8px 16px; border-radius:20px; font-weight:bold; margin-bottom:20px; }
     section { padding:70px 20px; max-width:1100px; margin:0 auto; }
     section h2 { font-size:2.1rem; margin-bottom:20px; color:#00e0ff; text-transform:uppercase; }
@@ -35,8 +39,10 @@
   <h1>COPY TRADE PROFISSIONAL COM RESULTADOS PÚBLICOS</h1>
   <p>Estratégia automatizada com histórico real na Roboforex <strong>e auditada pelo Myfxbook</strong>.</p>
   <p><strong>Após o preenchimento das 50 vagas, o valor retorna ao preço original.</strong></p>
-  <a class="cta" href="LINK_EDUZZ_AQUI" target="_blank">QUERO GARANTIR MINHA VAGA</a>
-  <a class="cta" href="https://www.myfxbook.com/members/ATOMBOTFX/dox-fx-aud/11824369" target="_blank">VER AUDITORIA NO MYFXBOOK</a>
+
+  <div style="margin-top:30px;">
+    <a class="cta cta-green" href="LINK_EDUZZ_AQUI" target="_blank">QUERO GARANTIR MINHA VAGA</a>
+  </div>
 </header>
 
 <section>
@@ -69,6 +75,10 @@
     <div class="card"><p>✔ DRAWDOWN E GESTÃO DE RISCO VISÍVEIS</p></div>
     <div class="card"><p>✔ CONTA REAL AUDITADA</p></div>
     <div class="card"><p>✔ TRANSPARÊNCIA TOTAL DE PERFORMANCE</p></div>
+  </div>
+
+  <div style="text-align:center;margin-top:40px;">
+    <a class="cta" href="https://www.myfxbook.com/members/ATOMBOTFX/dox-fx-aud/11824369" target="_blank">VER AUDITORIA NO MYFXBOOK</a>
   </div>
 </section>
 
@@ -103,7 +113,7 @@
 </section>
 
 <section>
-  <h2>INVESTIMENTO PROMOCIONAL</h2>
+  <h2>VALOR PROMOCIONAL</h2>
   <div class="price">
     <p class="old">R$ 997</p>
     <p class="new">R$ 497</p>
@@ -120,41 +130,4 @@
   <p class="warning">Aviso de Risco: Operações no mercado financeiro envolvem riscos e podem resultar em perdas. Resultados passados não garantem resultados futuros. Nunca invista dinheiro que você não pode perder.</p>
 </footer>
 
-<script>
-  const input = document.getElementById('valor');
-  const resultado = document.getElementById('resultado');
-
-  input.addEventListener('input', () => {
-    const capitalInicial = parseFloat(input.value);
-    if (isNaN(capitalInicial) || capitalInicial <= 0) {
-      resultado.innerHTML = '';
-      return;
-    }
-
-    const lucroAnual = 0.7087;
-    const taxaMensal = Math.pow(1 + lucroAnual, 1 / 12) - 1;
-
-    let capital = capitalInicial;
-    let lucroLiquidoTotal = 0;
-
-    for (let i = 1; i <= 12; i++) {
-      const lucroBrutoMes = capital * taxaMensal;
-      const performance = lucroBrutoMes * 0.30;
-      const lucroLiquidoMes = lucroBrutoMes - performance;
-      capital += lucroLiquidoMes;
-      lucroLiquidoTotal += lucroLiquidoMes;
-    }
-
-    const percentualMensal = ((lucroLiquidoTotal / capitalInicial) / 12) * 100;
-
-    resultado.innerHTML = `
-      LUCRO BRUTO ANUAL ESTIMADO: R$ ${(capitalInicial * lucroAnual).toFixed(2)}<br>
-      LUCRO LÍQUIDO (APÓS PERFORMANCE): R$ ${lucroLiquidoTotal.toFixed(2)}<br>
-      CAPITAL FINAL ESTIMADO: R$ ${capital.toFixed(2)}<br><br>
-      <strong>≈ ${percentualMensal.toFixed(2)}% DE LUCRO MÉDIO MENSAL SOBRE O CAPITAL</strong>
-    `;
-  });
-</script>
-
-</body>
-</html>
+<script
