@@ -35,6 +35,7 @@ section h2 { font-size:2.1rem; margin-bottom:20px; color:#00e0ff; text-transform
 canvas { margin-top:30px; max-width:100%; background:#0e0e11; border-radius:10px; }
 
 footer { background:#0a0a0d; padding:40px 20px; text-align:center; font-size:0.9rem; color:#aaa; }
+.warning { font-size:0.85rem; color:#ccc; margin-top:20px; }
 </style>
 </head>
 
@@ -49,83 +50,132 @@ footer { background:#0a0a0d; padding:40px 20px; text-align:center; font-size:0.9
 </header>
 
 <section>
+<h2>RESULTADOS REAIS E AUDITADOS</h2>
+<div class="grid">
+  <div class="card"><strong>CRESCIMENTO DE CAPITAL</strong><p>Evolução contínua com histórico público.</p></div>
+  <div class="card"><strong>LUCRO EM 2025</strong><p><strong>70,87% no ano</strong>.</p></div>
+  <div class="card"><strong>MÉDIA MENSAL</strong><p>4% a 5% ao mês.</p></div>
+</div>
+<div style="text-align:center;margin-top:40px;">
+  <a class="cta" href="https://roboforex.com/es/copy-trading/rating/aaaf/32089860/" target="_blank">
+    CONFERIR ESTATÍSTICAS NA ROBOFOREX
+  </a>
+</div>
+</section>
+
+<section>
+<h2>DESTAQUES DA AUDITORIA MYFXBOOK</h2>
+<div class="grid">
+  <div class="card">✔ RESULTADOS VERIFICADOS</div>
+  <div class="card">✔ GRÁFICO MÊS A MÊS</div>
+  <div class="card">✔ HISTÓRICO COMPLETO</div>
+  <div class="card">✔ GESTÃO DE RISCO</div>
+  <div class="card">✔ CONTA REAL</div>
+  <div class="card">✔ TRANSPARÊNCIA TOTAL</div>
+</div>
+<div style="text-align:center;margin-top:40px;">
+  <a class="cta" href="https://www.myfxbook.com/members/ATOMBOTFX/dox-fx-aud/11824369" target="_blank">
+    VER AUDITORIA NO MYFXBOOK
+  </a>
+</div>
+</section>
+
+<section>
 <h2>SIMULADOR DE RENDIMENTO (2025)</h2>
-
 <div class="simulator">
-<input type="number" id="capitalInicial" placeholder="Ex: 10000">
-<br><br>
-<button class="cta cta-green" onclick="simular()">SIMULAR RENDIMENTO</button>
+  <input type="number" id="capitalInicial" placeholder="Ex: 10000">
+  <br><br>
+  <button class="cta cta-green" onclick="simular()">SIMULAR RENDIMENTO</button>
+  <div id="resultado" style="margin-top:25px;color:#00e0ff;font-weight:bold;"></div>
+  <canvas id="grafico" width="900" height="420"></canvas>
+  <p style="margin-top:15px;font-size:0.85rem;color:#ccc;">
+    * Simulação educacional baseada em histórico de 70,87% ao ano.
+  </p>
+</div>
+</section>
 
-<div id="resultado" style="margin-top:25px;color:#00e0ff;font-weight:bold;"></div>
+<section>
+<h2>O QUE É COPY TRADE?</h2>
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" allowfullscreen></iframe>
+</div>
+</section>
 
-<canvas id="grafico" width="900" height="420"></canvas>
+<section>
+<h2>O QUE VOCÊ RECEBE AO ENTRAR</h2>
+<div class="grid">
+  <div class="card">✔ ACESSO À PLATAFORMA EDUZZ</div>
+  <div class="card">✔ VIDEO-AULAS DE CONFIGURAÇÃO</div>
+  <div class="card">✔ OPERAÇÕES AUTOMATIZADAS</div>
+  <div class="card">✔ EXECUÇÃO NA ROBOFOREX</div>
+  <div class="card">✔ GESTÃO DE RISCO</div>
+  <div class="card">✔ RESULTADOS TRANSPARENTES</div>
+</div>
+</section>
 
-<p style="margin-top:15px;font-size:0.85rem;color:#ccc;">
-* Simulação educacional baseada em histórico de 70,87% ao ano. Não representa garantia de ganhos.
-</p>
+<section>
+<h2>VALOR PROMOCIONAL</h2>
+<div class="price">
+  <p class="old">R$ 997</p>
+  <p class="new">R$ 497</p>
+  <p>+ <strong>30% de taxa de performance</strong></p>
+  <a class="cta cta-green" href="LINK_EDUZZ_AQUI" target="_blank">ACESSAR AGORA</a>
+  <p style="margin-top:20px;color:#ffbaba;font-weight:bold;">
+    ⚠️ APÓS 50 PARTICIPANTES, O VALOR RETORNA PARA R$ 997
+  </p>
 </div>
 </section>
 
 <footer>
 <p>© 2025 – Copy Trade Profissional</p>
+<p class="warning">
+Aviso de Risco: Operações no mercado financeiro envolvem riscos e podem resultar em perdas.
+</p>
 </footer>
 
 <script>
 function simular() {
-  const capitalInput = document.getElementById("capitalInicial").value;
-  const capitalInicial = parseFloat(capitalInput);
-  if (!capitalInicial || capitalInicial <= 0) {
-    alert("Informe um valor válido");
-    return;
-  }
+  const capitalInicial = parseFloat(document.getElementById("capitalInicial").value);
+  if (!capitalInicial || capitalInicial <= 0) return alert("Informe um valor válido");
 
   const lucroAnual = 0.7087;
   const taxaMensal = Math.pow(1 + lucroAnual, 1/12) - 1;
 
   let capital = capitalInicial;
   let lucroLiquidoTotal = 0;
-  let valoresMensais = [];
+  let valores = [];
 
-  for (let mes = 1; mes <= 12; mes++) {
+  for (let i=1;i<=12;i++) {
     const lucroBruto = capital * taxaMensal;
-    const taxaPerformance = lucroBruto * 0.30;
-    const lucroLiquido = lucroBruto - taxaPerformance;
-
-    capital += lucroLiquido;
-    lucroLiquidoTotal += lucroLiquido;
-    valoresMensais.push(capital);
+    const taxa = lucroBruto * 0.30;
+    const liquido = lucroBruto - taxa;
+    capital += liquido;
+    lucroLiquidoTotal += liquido;
+    valores.push(capital);
   }
 
   const percentualMensal = ((lucroLiquidoTotal / capitalInicial) / 12) * 100;
 
   document.getElementById("resultado").innerHTML = `
-    LUCRO BRUTO ANUAL ESTIMADO: R$ ${(capitalInicial * lucroAnual).toFixed(2)}<br>
-    LUCRO LÍQUIDO (APÓS PERFORMANCE): R$ ${lucroLiquidoTotal.toFixed(2)}<br>
-    CAPITAL FINAL ESTIMADO: R$ ${capital.toFixed(2)}<br><br>
-    <strong>≈ ${percentualMensal.toFixed(2)}% DE LUCRO MÉDIO MENSAL (LÍQUIDO)</strong>
+    LUCRO LÍQUIDO TOTAL: R$ ${lucroLiquidoTotal.toFixed(2)}<br>
+    CAPITAL FINAL ESTIMADO: R$ ${capital.toFixed(2)}<br>
+    <strong>≈ ${percentualMensal.toFixed(2)}% AO MÊS (LÍQUIDO)</strong>
   `;
 
-  const canvas = document.getElementById("grafico");
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const ctx = document.getElementById("grafico").getContext("2d");
+  ctx.clearRect(0,0,900,420);
 
-  const maxValor = Math.max(...valoresMensais);
-  const barWidth = 50;
-  const gap = 20;
-  const baseY = 360;
-
-  valoresMensais.forEach((valor, index) => {
-    const barHeight = (valor / maxValor) * 280;
-    const x = 60 + index * (barWidth + gap);
-    const y = baseY - barHeight;
-
+  const max = Math.max(...valores);
+  valores.forEach((v,i)=>{
+    const h = (v/max)*280;
+    const x = 60 + i*65;
+    const y = 360-h;
     ctx.fillStyle = "#00e0ff";
-    ctx.fillRect(x, y, barWidth, barHeight);
-
-    ctx.fillStyle = "#fff";
-    ctx.font = "11px Arial";
-    ctx.fillText(`M${index+1}`, x + 8, baseY + 15);
-    ctx.fillText(`R$ ${valor.toFixed(0)}`, x - 10, y - 8);
+    ctx.fillRect(x,y,40,h);
+    ctx.fillStyle="#fff";
+    ctx.font="11px Arial";
+    ctx.fillText(`M${i+1}`,x+5,380);
+    ctx.fillText(`R$ ${v.toFixed(0)}`,x-5,y-8);
   });
 }
 </script>
