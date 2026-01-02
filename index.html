@@ -8,8 +8,8 @@
     body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#0e0e11; color:#fff; line-height:1.6; }
     header { background: linear-gradient(135deg,#1f1f2e,#111118); padding:90px 20px; text-align:center; }
     header h1 { font-size:2.8rem; margin-bottom:20px; color:#00e0ff; text-transform:uppercase; }
-    header p { font-size:1.25rem; max-width:900px; margin:0 auto 30px; }
-    .cta { background:#00e0ff; color:#000; padding:18px 38px; border-radius:6px; font-size:1.15rem; font-weight:bold; text-decoration:none; display:inline-block; }
+    header p { font-size:1.25rem; max-width:900px; margin:0 auto 15px; }
+    .cta { background:#00e0ff; color:#000; padding:18px 38px; border-radius:6px; font-size:1.15rem; font-weight:bold; text-decoration:none; display:inline-block; margin:10px; }
     .badge { display:inline-block; background:#ff3b3b; color:#fff; padding:8px 16px; border-radius:20px; font-weight:bold; margin-bottom:20px; }
     section { padding:70px 20px; max-width:1100px; margin:0 auto; }
     section h2 { font-size:2.1rem; margin-bottom:20px; color:#00e0ff; text-transform:uppercase; }
@@ -22,8 +22,8 @@
     .video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:30px; }
     .video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
     .simulator { background:#111118; border:2px solid #00e0ff; padding:40px; border-radius:14px; text-align:center; }
-    .simulator input { padding:12px; font-size:1.1rem; width:200px; text-align:center; border-radius:6px; border:none; margin-top:10px; }
-    .result { margin-top:20px; font-size:1.3rem; color:#00e0ff; font-weight:bold; }
+    .simulator input { padding:12px; font-size:1.1rem; width:220px; text-align:center; border-radius:6px; border:none; margin-top:10px; }
+    .result { margin-top:20px; font-size:1.15rem; color:#00e0ff; font-weight:bold; }
     footer { background:#0a0a0d; padding:40px 20px; text-align:center; font-size:0.9rem; color:#aaa; }
     .warning { font-size:0.85rem; color:#ccc; margin-top:20px; }
   </style>
@@ -31,18 +31,20 @@
 <body>
 
 <header>
-  <div class="badge">⚠️ APENAS 50 VAGAS PROMOCIONAIS</div>
+  <div class="badge">⚠️ APENAS 50 VAGAS NO VALOR PROMOCIONAL</div>
   <h1>COPY TRADE PROFISSIONAL COM RESULTADOS PÚBLICOS</h1>
-  <p>Estratégia automatizada com histórico real na Roboforex. <strong>Após o preenchimento das 50 vagas, o valor retorna ao preço original.</strong></p>
+  <p>Estratégia automatizada com histórico real na Roboforex <strong>e auditada pelo Myfxbook</strong>.</p>
+  <p><strong>Após o preenchimento das 50 vagas, o valor retorna ao preço original.</strong></p>
   <a class="cta" href="LINK_EDUZZ_AQUI" target="_blank">QUERO GARANTIR MINHA VAGA</a>
+  <a class="cta" href="https://www.myfxbook.com/members/ATOMBOTFX/dox-fx-aud/11824369" target="_blank">VER AUDITORIA NO MYFXBOOK</a>
 </header>
 
 <section>
-  <h2>RESULTADOS REAIS NA ROBOFOREX</h2>
+  <h2>RESULTADOS REAIS E AUDITADOS</h2>
   <div class="grid">
     <div class="card">
       <h3>CRESCIMENTO DE CAPITAL</h3>
-      <p>Histórico público demonstrando evolução contínua do capital, com estratégia consistente e controle de risco.</p>
+      <p>Evolução contínua do capital, com histórico público e verificável.</p>
     </div>
     <div class="card">
       <h3>LUCRO EM 2025</h3>
@@ -53,15 +55,30 @@
       <p>Equivalente a aproximadamente <strong>4% a 5% ao mês</strong>, considerando capitalização composta.</p>
     </div>
   </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a class="cta" href="https://roboforex.com/es/copy-trading/rating/aaaf/32089860/" target="_blank">CONFERIR ESTATÍSTICAS NA ROBOFOREX</a>
+  </div>
+</section>
+
+<section>
+  <h2>DESTAQUES DA AUDITORIA MYFXBOOK</h2>
+  <div class="grid">
+    <div class="card"><p>✔ RESULTADOS VERIFICADOS POR TERCEIROS</p></div>
+    <div class="card"><p>✔ GRÁFICO DE LUCRO MÊS A MÊS</p></div>
+    <div class="card"><p>✔ HISTÓRICO COMPLETO DE OPERAÇÕES</p></div>
+    <div class="card"><p>✔ DRAWDOWN E GESTÃO DE RISCO VISÍVEIS</p></div>
+    <div class="card"><p>✔ CONTA REAL AUDITADA</p></div>
+    <div class="card"><p>✔ TRANSPARÊNCIA TOTAL DE PERFORMANCE</p></div>
+  </div>
 </section>
 
 <section>
   <h2>SIMULADOR DE RENDIMENTO (2025)</h2>
   <div class="simulator">
-    <p>Informe quanto teria investido no início de 2025 e veja o <strong>lucro bruto estimado</strong> com base no resultado anual.</p>
+    <p>Informe o valor investido no início de 2025 e veja uma <strong>simulação mês a mês</strong>, considerando taxa de performance.</p>
     <input type="number" id="valor" placeholder="Ex: 10000" />
     <div class="result" id="resultado"></div>
-    <p style="margin-top:15px;font-size:0.9rem;color:#ccc;">* Simulação baseada no resultado anual de 70,87%. Não representa garantia de ganhos.</p>
+    <p style="margin-top:15px;font-size:0.9rem;color:#ccc;">* Simulação educacional baseada no histórico anual de 70,87%. Não representa garantia de ganhos.</p>
   </div>
 </section>
 
@@ -76,7 +93,7 @@
 <section>
   <h2>O QUE VOCÊ RECEBE AO ENTRAR</h2>
   <div class="grid">
-    <div class="card"><p>✔ ACESSO À PLATAFORMA EDUCACIONAL</p></div>
+    <div class="card"><p>✔ ACESSO À PLATAFORMA EDUCACIONAL (EDUZZ)</p></div>
     <div class="card"><p>✔ VIDEO-AULAS DE CONFIGURAÇÃO DO COPY TRADE</p></div>
     <div class="card"><p>✔ OPERAÇÕES 100% AUTOMATIZADAS</p></div>
     <div class="card"><p>✔ EXECUÇÃO EM TEMPO REAL NA ROBOFOREX</p></div>
@@ -94,7 +111,7 @@
     <p>+ <strong>30% DE TAXA DE PERFORMANCE SOMENTE SOBRE OS LUCROS</strong></p>
     <br />
     <a class="cta" href="LINK_EDUZZ_AQUI" target="_blank">ACESSAR AGORA</a>
-    <p style="margin-top:20px;color:#ffbaba;font-weight:bold;">⚠️ Após 50 participantes, o valor retorna para R$ 997</p>
+    <p style="margin-top:20px;color:#ffbaba;font-weight:bold;">⚠️ APÓS 50 PARTICIPANTES, O VALOR RETORNA PARA R$ 997</p>
   </div>
 </section>
 
@@ -108,14 +125,34 @@
   const resultado = document.getElementById('resultado');
 
   input.addEventListener('input', () => {
-    const valor = parseFloat(input.value);
-    if (!isNaN(valor) && valor > 0) {
-      const lucro = valor * 0.7087;
-      const total = valor + lucro;
-      resultado.innerHTML = `Lucro bruto estimado: R$ ${lucro.toFixed(2)}<br>Capital final estimado: R$ ${total.toFixed(2)}`;
-    } else {
+    const capitalInicial = parseFloat(input.value);
+    if (isNaN(capitalInicial) || capitalInicial <= 0) {
       resultado.innerHTML = '';
+      return;
     }
+
+    const lucroAnual = 0.7087;
+    const taxaMensal = Math.pow(1 + lucroAnual, 1 / 12) - 1;
+
+    let capital = capitalInicial;
+    let lucroLiquidoTotal = 0;
+
+    for (let i = 1; i <= 12; i++) {
+      const lucroBrutoMes = capital * taxaMensal;
+      const performance = lucroBrutoMes * 0.30;
+      const lucroLiquidoMes = lucroBrutoMes - performance;
+      capital += lucroLiquidoMes;
+      lucroLiquidoTotal += lucroLiquidoMes;
+    }
+
+    const percentualMensal = ((lucroLiquidoTotal / capitalInicial) / 12) * 100;
+
+    resultado.innerHTML = `
+      LUCRO BRUTO ANUAL ESTIMADO: R$ ${(capitalInicial * lucroAnual).toFixed(2)}<br>
+      LUCRO LÍQUIDO (APÓS PERFORMANCE): R$ ${lucroLiquidoTotal.toFixed(2)}<br>
+      CAPITAL FINAL ESTIMADO: R$ ${capital.toFixed(2)}<br><br>
+      <strong>≈ ${percentualMensal.toFixed(2)}% DE LUCRO MÉDIO MENSAL SOBRE O CAPITAL</strong>
+    `;
   });
 </script>
 
